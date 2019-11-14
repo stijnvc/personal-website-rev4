@@ -63,6 +63,35 @@ You can view the source of this website on Github: https://github.com/stijnvc/pe
       <div class="noselect title flex-item">
         <a href="/">Stijn van Cuijk</a>
       </div>
+      <script>
+        function getOS() {
+          var userAgent = window.navigator.userAgent,
+              platform = window.navigator.platform,
+              macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
+              windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
+              iosPlatforms = ['iPhone', 'iPad', 'iPod'],
+              os = null;
+
+          if (macosPlatforms.indexOf(platform) !== -1) {
+            os = 'Mac OS';
+          } else if (iosPlatforms.indexOf(platform) !== -1) {
+            os = 'iOS';
+          } else if (windowsPlatforms.indexOf(platform) !== -1) {
+            os = 'Windows';
+          } else if (/Android/.test(userAgent)) {
+            os = 'Android';
+          } else if (!os && /Linux/.test(platform)) {
+            os = 'Linux';
+          }
+
+          return os;
+        }
+        if (getOS() == 'Windows') {
+          $('.title').addClass('windows');
+        }else{
+          $('.title').addClass('not-windows');
+        }
+      </script>
       <nav class="noselect flex-item">
         <a class="projects" href="/">Projects</a>
         <!-- <a class="blog" href="/blog">Blog</a> -->
@@ -166,6 +195,8 @@ You can view the source of this website on Github: https://github.com/stijnvc/pe
     var yPosition = element.offset().top;
     return yPosition;
   }
+  
+
 </script>
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/zoom.js"></script>
