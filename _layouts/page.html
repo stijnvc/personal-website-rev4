@@ -1,0 +1,24 @@
+{% include head.html %}
+<body id="page">
+<div class="wrapper">
+{% include header.html %}
+
+<div id="main">
+  <article class=" clearfix">
+    <div id="info-clone"></div>
+    {{ content }}
+  </article>
+  <!-- <div class="PageNavigation clearfix">
+    {% if page.previous.url %}
+      Previous: <a class="prev" href="{{page.previous.url}}">{{page.previous.title}}</a>
+    {% endif %}
+    {% if page.previous.url and page.next.url %}<span style="margin: 0 1em">|</span>{% endif %}
+    {% if page.next.url %}
+      Next: <a class="next" href="{{page.next.url}}">{{page.next.title}}</a>
+    {% endif %}
+  </div> -->
+</div>
+
+
+{% include footer.html %}
+</div>

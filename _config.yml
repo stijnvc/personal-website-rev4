@@ -1,0 +1,36 @@
+
+# The name of your website.
+name: Stijn van Cuijk Design
+
+description:
+  # Description of your site. This will show up in google.
+  meta: Portfolio of Stijn van Cuijk, a multidisciplinary designer specialized in industrial design.
+
+date_format: "%b %-d, %Y"
+
+# The URL of the homepage of your site (without trailing slash). Leave this
+# empty when you run Jekyll locally.
+url: https://stijnvancuijk.com
+baseurl: ""
+
+collections:
+  fp-collection:
+    output: true
+    permalink: /:permalink
+
+##################
+# BUILD SETTINGS #
+##################
+
+exclude: [vendor]
+kramdown:
+  input: GFM
+paginate_path: "/page-:num/"
+permalink: pretty
+defaults:
+  - scope:
+      path: ""
+      type: "fp-collection"
+    values:
+      layout: "page"
+      excerpt_separator: "<!--more-->"

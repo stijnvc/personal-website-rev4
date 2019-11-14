@@ -1,0 +1,65 @@
+
+
+<footer>
+    <p>Stijn van Cuijk — Arnhem, 2019 — <a href="mailto:contact@stijn.vc">contact@stijn.vc</a></p>
+</footer>
+
+<script>
+  $("#homepage .title a").fitText(.51);
+
+  $( ".process-toggle" ).click(function( e ) {
+    e.preventDefault();
+    $( ".process" ).removeClass('hidden');
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".process-toggle").offset().top - 50
+    }, 600);
+  });
+
+  $( ".info" ).clone().appendTo( "#info-clone" );
+
+  function stickyInfo(){
+
+    var scrollDist = scrollDistance();
+    var yPos = getPosition($('article')) - 0;
+    if(scrollDist > yPos && viewportHeight() > $('.info').height() + 85){
+      $('.info').addClass('fixed');
+    }else{
+      $('.info').removeClass('fixed');
+    }
+    $('#info-clone .info.fixed').width($('article > .info').width());
+    $('#info-clone .info.fixed').css('left', $('article > .info').offset().left);
+
+  }
+
+  stickyInfo();
+  window.onscroll = function () {
+    stickyInfo();
+  };
+  $( window ).resize(function() {
+    stickyInfo();
+  });
+
+  function scrollDistance(){
+    return $(document).scrollTop();
+  }
+  function viewportHeight(){
+    //return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    //return window.innerHeight;
+    return $('#size-reference').height();
+  }
+  function viewportWidth(){
+    //return $('#size-reference').width();
+    return $( window ).width();
+  }
+  function getDistanceToViewport(element){
+    return getPosition(element)-viewportHeight();
+  }
+  function getPosition(element) {
+    var yPosition = element.offset().top;
+    return yPosition;
+  }
+</script>
+<script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+<script src="{{ site.baseurl }}/js/zoom.js"></script>
+</body>
+</html>

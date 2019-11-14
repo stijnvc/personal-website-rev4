@@ -1,0 +1,29 @@
+---
+layout: homepage
+title: Projects
+---
+
+
+
+
+
+{% for item in site.fp-collection %}
+<article class="clearfix {{ item.classes }} ">
+  <a class="permalink" href="{{ item.url | prepend: site.baseurl }}">
+    <div class="thumb">
+      <img draggable="false" alt="thumbnail" src="{{ site.baseurl }}/img/{{ item.thumbnail }}">
+    </div>
+    <div class="info clearfix">
+      <div class="description">
+        <h1>{{ item.title }} <br>{{ item.year }}</h1>
+      </div>
+    </div>
+  </a>
+</article>
+{% endfor %}
+
+<style>
+a.projects {
+  color: white;
+}
+</style>

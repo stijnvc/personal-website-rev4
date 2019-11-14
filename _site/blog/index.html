@@ -1,0 +1,161 @@
+<!--
+       __
+      /\ \__  __    __
+  ____\ \ ,_\/\_\  /\_\    ___        __  __    ___
+ /',__\\ \ \/\/\ \ \/\ \ /' _ `\     /\ \/\ \  /'___\
+/\__, `\\ \ \_\ \ \ \ \ \/\ \/\ \  __\ \ \_/ |/\ \__/
+\/\____/ \ \__\\ \_\_\ \ \ \_\ \_\/\_\\ \___/ \ \____\
+ \/___/   \/__/ \/_/\ \_\ \/_/\/_/\/_/ \/__/   \/____/
+                   \ \____/
+                    \/___/
+
+This website is build and maintained by me (Stijn van Cuijk, hello@stijn.vc)
+It's made possible by the following open source projects:
+- Jekyll
+- jQuery
+- Normalize.css
+- Sass
+- FitVids.js
+- Dragscroll.js
+
+You can view the source of this website on Github: https://github.com/stijnvc/personal-website-rev3
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118663713-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-118663713-1');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8">
+    <title>
+      
+      Stijn van Cuijk Design
+      
+    </title>
+    <meta name="description" content="Portfolio of Stijn van Cuijk, a multidisciplinary designer currently studying Industrial Product Design.">
+    <link rel="canonical" href="http://localhost:4000/blog/" />
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.min.css">
+    <link rel="stylesheet" href="/css/zoom.css">
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/jquery.fitvids.js"></script>
+    <script src="/js/jquery.fittext.js"></script>
+    <script>
+      $(document).ready(function(){
+        // Target your .container, .wrapper, .post, etc.
+        $("article").fitVids();
+      });
+    </script>
+
+  </head>
+
+<body id="page">
+<header class="clearfix top">
+  <div class=" wrapper">
+    <div class="flex-container">
+      <div class="noselect title flex-item">
+        <a href="/">Stijn van Cuijk</a>
+      </div>
+      <nav class="noselect flex-item">
+        <a class="projects" href="/">Projects</a>
+        <!-- <a class="blog" href="/blog">Blog</a> -->
+        <a class="about" href="/about">About</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<div id="size-reference"></div>
+
+    <div class="wrapper">
+
+<div id="main">
+  <h1> Writings and other logical fallacies</h1>
+  <p>All entries written by me unless otherwhise stated.</p>
+  
+
+</div>
+
+
+<div>
+<script>
+$( "p:has(img)" ).addClass( "img" );
+$( "p:has(video)" ).addClass( "video" );
+</script>
+<style>
+a.blog {
+  color: black;
+}
+</style>
+
+
+<footer>
+    <p>Stijn van Cuijk — Arnhem, 2019 — <a href="mailto:contact@stijn.vc">contact@stijn.vc</a></p>
+</footer>
+
+<script>
+  $("#homepage .title a").fitText(.51);
+
+  $( ".process-toggle" ).click(function( e ) {
+    e.preventDefault();
+    $( ".process" ).removeClass('hidden');
+    $([document.documentElement, document.body]).animate({
+        scrollTop: $(".process-toggle").offset().top - 50
+    }, 600);
+  });
+
+  $( ".info" ).clone().appendTo( "#info-clone" );
+
+  function stickyInfo(){
+
+    var scrollDist = scrollDistance();
+    var yPos = getPosition($('article')) - 0;
+    if(scrollDist > yPos && viewportHeight() > $('.info').height() + 85){
+      $('.info').addClass('fixed');
+    }else{
+      $('.info').removeClass('fixed');
+    }
+    $('#info-clone .info.fixed').width($('article > .info').width());
+    $('#info-clone .info.fixed').css('left', $('article > .info').offset().left);
+
+  }
+
+  stickyInfo();
+  window.onscroll = function () {
+    stickyInfo();
+  };
+  $( window ).resize(function() {
+    stickyInfo();
+  });
+
+  function scrollDistance(){
+    return $(document).scrollTop();
+  }
+  function viewportHeight(){
+    //return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    //return window.innerHeight;
+    return $('#size-reference').height();
+  }
+  function viewportWidth(){
+    //return $('#size-reference').width();
+    return $( window ).width();
+  }
+  function getDistanceToViewport(element){
+    return getPosition(element)-viewportHeight();
+  }
+  function getPosition(element) {
+    var yPosition = element.offset().top;
+    return yPosition;
+  }
+</script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/zoom.js"></script>
+</body>
+</html>
+

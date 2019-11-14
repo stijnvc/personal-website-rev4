@@ -1,0 +1,129 @@
+<audio id="key-1" controls>
+  <source src="/notes/1.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-2" controls>
+  <source src="/notes/2.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-3" controls>
+  <source src="/notes/3.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-4" controls>
+  <source src="/notes/4.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-5" controls>
+  <source src="/notes/5.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-6" controls>
+  <source src="/notes/6.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-7" controls>
+  <source src="/notes/7.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-8" controls>
+  <source src="/notes/8.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-9" controls>
+  <source src="/notes/9.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-10" controls>
+  <source src="/notes/10.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-11" controls>
+  <source src="/notes/11.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-12" controls>
+  <source src="/notes/12.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-13" controls>
+  <source src="/notes/13.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-14" controls>
+  <source src="/notes/14.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-15" controls>
+  <source src="/notes/15.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-16" controls>
+  <source src="/notes/16.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-17" controls>
+  <source src="/notes/17.mp3" type="audio/mpeg">
+</audio>
+<audio id="key-18" controls>
+  <source src="/notes/18.mp3" type="audio/mpeg">
+</audio>
+
+<div id="play"></div>
+
+<script>
+
+noteNo = 0;
+
+function playNote(key){
+  noteNo++;
+  $('#play').append("<audio id='note-" + noteNo + "' controls><source src='/notes/" + key + ".mp3' type='audio/mpeg'></audio>");
+  $('#note-' + noteNo).get(0).play();
+  // $('#note-' + noteNo).get(0).addEventListener('ended', function(){
+  //   $('#note-' + noteNo).get(0).remove();
+  // });
+}
+
+
+document.addEventListener('keydown', function(e) {
+  if(e.keyCode == 65){ // A
+    playNote(1);
+  }
+  if(e.keyCode == 87){ // W
+    playNote(2);
+  }
+  if(e.keyCode == 83){ // S
+    playNote(3);
+  }
+  if(e.keyCode == 69){ // E
+    playNote(4);
+  }
+  if(e.keyCode == 68){ // D
+    playNote(5);
+  }
+  if(e.keyCode == 70){ // F
+    playNote(6);
+  }
+  if(e.keyCode == 84){ // T
+    playNote(7);
+  }
+  if(e.keyCode == 71){ // G
+    playNote(8);
+  }
+  if(e.keyCode == 89){ // Y
+    playNote(9);
+  }
+  if(e.keyCode == 72){ // H
+    playNote(10);
+  }
+  if(e.keyCode == 85){ // U
+    playNote(11);
+  }
+  if(e.keyCode == 74){ // J
+    playNote(12);
+  }
+  if(e.keyCode == 75){ // K
+    playNote(13);
+  }
+  if(e.keyCode == 79){ // O
+    playNote(14);
+  }
+  if(e.keyCode == 76){ // L
+    playNote(15);
+  }
+  if(e.keyCode == 80){ // P
+    playNote(16);
+  }
+  if(e.keyCode == 186){ // ;
+    playNote(17);
+  }
+  if(e.keyCode == 222){ // '
+    playNote(18);
+  }
+});
+
+</script>

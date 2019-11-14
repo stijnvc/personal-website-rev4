@@ -1,0 +1,49 @@
+---
+---
+
+{% include head.html %}
+<body id="page">
+{% include header.html %}
+    <div class="wrapper">
+
+<div id="main">
+  <h1> Writings and other logical fallacies</h1>
+  <p>All entries written by me unless otherwhise stated.</p>
+  {% for post in site.posts %}
+
+  {% assign minutes = post.content | number_of_words | divided_by: 180 %}
+  {% if minutes == 0 %}
+    {% assign read-time = site.var_less_than_a_minute_read %}
+  {% else %}
+    {% assign read-time = minutes | append: "&nbsp;" | append: site.var_min_read %}
+  {% endif %}
+
+  <article>
+    <p>
+    <span class="meta">
+      {{ post.date | date: site.date_format }}</span><br>
+  	<a href="{{ post.url | prepend: site.baseurl }}" style="font-weight: 500;">{{ post.title }}</a><br>
+      {% if post.summary %}
+        {{ post.summary }}
+      {% else %}
+        {{ post.excerpt | remove: '<p>' | remove: '</p>' }}
+      {% endif %}
+    </p>
+
+  </article>
+  {% endfor %}
+
+</div>
+
+
+<div>
+<script>
+$( "p:has(img)" ).addClass( "img" );
+$( "p:has(video)" ).addClass( "video" );
+</script>
+<style>
+a.blog {
+  color: black;
+}
+</style>
+{% include footer.html %}

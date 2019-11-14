@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PBBODM</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#0dd5ff">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="crypto-js.js"></script>
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+      body {
+        background-color: #eee;
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+      }
+      * {
+        box-sizing: border-box;
+        font-size: 18px;
+        font-family: 'Montserrat', sans-serif;
+        color: #333;
+      }
+      .box {
+        background-color: white;
+        padding: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+      }
+      .input {
+        display: block;
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 30px;
+        font-weight: 400;
+        border: 1px solid #ccc;
+      }
+      button {
+        padding: 10px 12px;
+        margin-bottom: 30px;
+        width: 100%;
+        display: block;
+        background-color: #3DD5FF;
+        border: none;
+        color: #275F77;
+        cursor: pointer;
+      }
+      button:focus,
+      input:focus {
+        outline: 3px solid #333;
+      }
+      button:active {
+        background-color: #333;
+        color: white;
+      }
+      .result {
+        padding: 10px 12px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1.5em;
+        background-color: #eee;
+        border: 1px solid #ccc;
+      }
+      .result span {
+        font-weight: 400;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="box">
+      <input placeholder="Master password" id="master" class="input" type="number" pattern="[0-9]*" inputmode="numeric" min="1111" max="9999" style="-webkit-text-security: disc;" autofocus />
+      <input placeholder="Value" id="value" class="input" type="password" value="">
+      <button>Generate</button>
+      <div class="result"><span>...</span></div>
+    </div>
+
+    <script>
+      function encrypt(value, master){
+        var hash = CryptoJS.HmacSHA256(value, master);
+        var base64 = CryptoJS.enc.Base64.stringify(hash).substr(6,10);
+        return base64;
+      };
+      function run(value, master){
+        if (value != "" && master != "") {
+          var add = "";
+          while( !/\d/.test(encrypt(value + add, master)) || !/[a-z]/.test(encrypt(value + add, master)) || !/[A-Z]/.test(encrypt(value + add, master)) || /[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(encrypt(value + add, master)) ){
+            add += "0";
+            console.log("yeah boi");
+          }
+          return encrypt(value + add, master);
+        } else {
+          return "<span>...</span>";
+        }
+      }
+      $('button').on("click", function() {
+        $('.result').html(run($('#value').val(), $('#master').val()));
+        $('#value').val('');
+        $('#master').val('');
+      });
+    </script>
+  </body>
+</html>
