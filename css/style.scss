@@ -85,7 +85,7 @@ body {
          (min-resolution: 192dpi) {
     font-weight: 300;
   }
-  padding-top: 72px;
+  padding-top: calc(72px - 10px);
 }
 html {
   overflow-y: scroll;
@@ -97,7 +97,7 @@ html {
   opacity: 0;
 }
 .wrapper {
-  padding: 0 1rem;
+  padding: 0 1rem 0 1.6rem;
 }
 a {
   text-decoration: none;
@@ -133,21 +133,21 @@ header {
   background-color: hsl(33, 5%, 97%);
   .inner {
     margin: .5rem auto;
-    padding: .5rem;
+    padding: .5rem 10px .5rem 0;
     img.logo {
       height: 2.5rem;
       float: left;
       width: auto;
       opacity: .85;
-      margin-left: -.2rem;
+      margin-left: -.1rem;
     }
     nav {
       float: right;
       a {
         display: inline-block;
         margin-left: 2rem;
-        padding-top: .3rem;
-        padding-bottom: 0rem;
+        padding-top: 0.1rem;
+        padding-bottom: .2rem;
       }
       a:hover {
         text-decoration: none;
@@ -157,7 +157,7 @@ header {
   }
 }
 .width {
-  max-width: 1400px;
+  max-width: 1410px;
   @media(max-width: 1440px) {
     max-width: 1200px;
   }
@@ -170,13 +170,13 @@ header {
   position: relative;
   & > * {
     width: 50%;
-    padding: .3rem;
+    padding: 0 10px 10px 0;
   }
   & > p,
   .text {
     padding: 1.5em;
     &:first-child {
-      padding-top: .3rem;
+      padding-top: 10px;
     }
     p {
       margin-bottom: 1rem;
@@ -207,10 +207,10 @@ header {
     width: 12.5%;
   }
   .align-left, .a-l {
-    padding-left: .3rem;
+    padding-left: 0;
   }
   .align-right, .a-r {
-    padding-right: .3rem;
+    padding-right: 10px;
   }
   .grid-sizer {
     width: 12.5%;
@@ -218,7 +218,7 @@ header {
   @media(max-width: 840px) {
     & > * {
       width: 100% !important;
-      padding: .3rem !important;
+      padding: 0 10px 10px 0 !important;
     }
   }
   hr {
@@ -228,13 +228,14 @@ header {
   }
   div {
     img {
-      margin-bottom: .6rem;
+      margin-bottom: 10px;
     }
     img:last-child {
       margin-bottom: 0;
     }
   }
   div.thumb {
+    overflow: hidden;
     img {
       margin: 0;
     }
@@ -253,15 +254,15 @@ header {
     right: 0;
     width: 100%;
     padding: 1rem;
-    padding-top: 2rem;
+    //padding-top: 2rem;
     color: white;
-    background: linear-gradient(0deg, rgba(0,0,0,0.26514355742296913) 0%, rgba(0,0,0,0) 100%);
+    //background: linear-gradient(0deg, rgba(0,0,0,0.26514355742296913) 0%, rgba(0,0,0,0) 100%);
   }
 }
 footer {
   padding: 2rem 0;
   p {
-    padding: .3rem;
+    padding: 0 10px 10px 0;
     margin: 0 auto;
   }
 }
