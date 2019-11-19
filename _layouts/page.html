@@ -1,12 +1,11 @@
 {% include head.html %}
 <body id="page">
-<div class="wrapper">
 {% include header.html %}
 
-<div id="main">
-  <article class=" clearfix">
-    <div id="info-clone"></div>
+<div class="wrapper">
+<article class="grid width fade hidden">
     {{ content }}
+    <div class="grid-sizer"></div>
   </article>
   <!-- <div class="PageNavigation clearfix">
     {% if page.previous.url %}
@@ -17,8 +16,6 @@
       Next: <a class="next" href="{{page.next.url}}">{{page.next.title}}</a>
     {% endif %}
   </div> -->
-</div>
 
-
-{% include footer.html %}
+  {% include footer.html %}
 </div>

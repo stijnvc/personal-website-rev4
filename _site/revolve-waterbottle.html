@@ -43,10 +43,10 @@ You can view the source of this website on Github: https://github.com/stijnvc/pe
     <link rel="canonical" href="http://localhost:4000/revolve-waterbottle" />
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.min.css">
-    <link rel="stylesheet" href="/css/zoom.css">
     <script src="/js/jquery-3.3.1.min.js"></script>
     <script src="/js/jquery.fitvids.js"></script>
-    <script src="/js/jquery.fittext.js"></script>
+    <script src="/js/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/masonry.pkgd.min.js"></script>
     <script>
       $(document).ready(function(){
         // Target your .container, .wrapper, .post, etc.
@@ -57,185 +57,114 @@ You can view the source of this website on Github: https://github.com/stijnvc/pe
   </head>
 
 <body id="page">
-<div class="wrapper">
-<header class="clearfix top">
-  <div class=" wrapper">
-    <div class="flex-container">
-      <div class="noselect title flex-item">
-        <a href="/">Stijn van Cuijk</a>
-      </div>
-      <script>
-        function getOS() {
-          var userAgent = window.navigator.userAgent,
-              platform = window.navigator.platform,
-              macosPlatforms = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'],
-              windowsPlatforms = ['Win32', 'Win64', 'Windows', 'WinCE'],
-              iosPlatforms = ['iPhone', 'iPad', 'iPod'],
-              os = null;
-
-          if (macosPlatforms.indexOf(platform) !== -1) {
-            os = 'Mac OS';
-          } else if (iosPlatforms.indexOf(platform) !== -1) {
-            os = 'iOS';
-          } else if (windowsPlatforms.indexOf(platform) !== -1) {
-            os = 'Windows';
-          } else if (/Android/.test(userAgent)) {
-            os = 'Android';
-          } else if (!os && /Linux/.test(platform)) {
-            os = 'Linux';
-          }
-
-          return os;
-        }
-        if (getOS() == 'Windows') {
-          $('.title').addClass('windows');
-        }else{
-          $('.title').addClass('not-windows');
-        }
-      </script>
-      <nav class="noselect flex-item">
-        <a class="projects" href="/">Projects</a>
-        <!-- <a class="blog" href="/blog">Blog</a> -->
-        <a class="about" href="/about">About</a>
-      </nav>
-    </div>
+<header class="wrapper noselect">
+  <div class="width inner clearfix">
+    <a href="/"><img class="logo" alt="Stijn van Cuijk" src="img/logo.svg"></a>
+    <nav>
+      <a class="projects" href="/">Projects</a>
+      <a class="about" href="/about">About</a>
+    </nav>
   </div>
 </header>
-<div id="size-reference"></div>
 
 
-<div id="main">
-  <article class=" clearfix">
-    <div id="info-clone"></div>
-    <img data-action="zoom" alt="top view" src="/img/portfolio/drinkfles2019-05.jpg">
+<div class="wrapper">
+<article class="grid width fade hidden">
+    <h1>Revolve Waterbottle</h1>
 
-<div class="info">
+<img class="col-8" alt="hero image" src="/img/portfolio/drinkfles2019-01.jpg">
 
-<h1>Revolve Waterbottle</h1>
 
-<span class="meta">2018 / In collaboration with <a href="https://www.linkedin.com/in/maarten-roos-345084134/">Maarten Roos</a>.</span>
-
-<p>The goal of this project was to design a water bottle that fits into the daily routine like a jigsaw piece
+<p class="col-3 a-l">The goal of this project was to design a water bottle that fits into the daily routine like a jigsaw piece
   into a puzzle. Keeping the design accessible by staying true to a functionalist
   vision, avoiding any unnecessary gimmicks.
 </p>
 
-<p>The design is focused around one simple innovation: being able to open the
+<img class="col-5" alt="top view" src="/img/portfolio/drinkfles2019-05.jpg">
+
+<hr>
+
+<p class=" col-3 a-l">The design is focused around one simple innovation: being able to open the
   bottle with one hand, thus allowing one hand to be free while opening,
   drinking and closing. And because the cap can't be easily separated from the
   bottle, you never have to be afraid of losing it.</p>
 
-<p>The design features a large opening allowing for easy refilling and adding ice,
-  fruit and herbs to your water. A filter keeps unwanted stuff like seeds out of your mouth.<p>
+  <img class="col-5" alt="exploded view" src="/img/portfolio/drinkfles2019-06.jpg">
+<hr>
+<p class=" col-3 a-l">The design features a large opening allowing for easy refilling and adding ice,
+  fruit and herbs to your water. A filter keeps unwanted stuff like seeds out of your mouth.</p>
 
+
+<img class="col-5" alt="filling the bottle and filtration visualization" src="/img/portfolio/drinkfles2019-04.jpg">
+
+<img class="col-8" alt="packaging" src="/img/portfolio/drinkfles2019-02.jpg">
+
+<h1 class="col-8">Process</h1>
+<img class="col-8" alt="design evolution" src="/img/portfolio/drinkfles-2/evolution-min.jpg">
+<img class="col-3" alt="sketches" src="/img/portfolio/drinkfles_schets.png">
+<img class="col-5" alt="opening concept" src="/img/portfolio/drinkfles_opening_concept.jpg">
+
+<hr>
+<img class="grayscale" alt="prototyping 1" src="/img/portfolio/drinkfles_modelbouw_01.jpg">
+<img class="grayscale"  alt="prototyping 2 " src="/img/portfolio/drinkfles_modelbouw_02.jpg">
+<p class=" a-l">Multiple prototyping iterations for optimizing ergonomics. The wooden model simulates the weight of a filled bottle.</p>
+<img  alt="prototyping 3" src="/img/portfolio/drinkfles_modelbouw_03.jpg">
+<hr>
+<p class="a-l">Testing different filter shapes for best water flow.</p>
+<div>
+<img class="grayscale" alt="filtration test 1" src="/img/portfolio/drinkfles_filtertest_01.jpg">
+<img class="grayscale" alt="filtration test 2" src="/img/portfolio/drinkfles_filtertest_02.jpg">
 </div>
-
-<img data-action="zoom" alt="hero image" src="/img/portfolio/drinkfles2019-01.jpg">
-<img data-action="zoom" alt="filling the bottle and filtration visualization" src="/img/portfolio/drinkfles2019-04.jpg">
-<img data-action="zoom" alt="exploded view" src="/img/portfolio/drinkfles2019-06.jpg">
-<img data-action="zoom" alt="packaging" src="/img/portfolio/drinkfles2019-02.jpg">
-
-<a class="process-toggle" href="#">Behind the design ↓</a>
-
-<div class="process hidden">
-  <img data-action="zoom" alt="design evolution" src="/img/portfolio/drinkfles-2/evolution-min.jpg">
-  <img data-action="zoom" alt="sketches" src="/img/portfolio/drinkfles_schets.png">
-  <img data-action="zoom" alt="opening concept" src="/img/portfolio/drinkfles_opening_concept.jpg">
-
-
-  <img data-action="zoom" alt="prototyping 1" src="/img/portfolio/drinkfles_modelbouw_01.jpg">
-  <img data-action="zoom" alt="prototyping 2" src="/img/portfolio/drinkfles_modelbouw_02.jpg">
-  <p>Multiple prototyping iterations for optimizing ergonomics. The wooden model simulates the weight of a filled bottle.</p>
-  <img data-action="zoom" alt="prototyping 3" src="/img/portfolio/drinkfles_modelbouw_03.jpg">
-
-  <p>Testing different filter shapes for best water flow.</p>
-  <img data-action="zoom" alt="filtration test 1" src="/img/portfolio/drinkfles_filtertest_01.jpg">
-  <img data-action="zoom" alt="filtration test 2" src="/img/portfolio/drinkfles_filtertest_02.jpg">
-
-  <p>Testing prototype in real life contexts.</p>
-  <img data-action="zoom" alt="prototype in conctext" src="/img/portfolio/drinkfles_context_01.jpg">
-  <img data-action="zoom" alt="prototype in conctext" src="/img/portfolio/drinkfles_context_02.jpg">
-  <img data-action="zoom" alt="prototype in conctext" src="/img/portfolio/drinkfles_context_04.jpg">
+<hr>
+<img class="col-8 " alt="prototype in context" src="/img/portfolio/drinkfles_context_03.jpg">
+<p class="a-l">Testing prototype in real life contexts.</p>
+<div>
+<img class=" " alt="prototype in context" src="/img/portfolio/drinkfles_context_01.jpg">
+<img class="" alt="prototype in context" src="/img/portfolio/drinkfles_context_04.jpg">
 </div>
+<img class="col-8" alt="prototype in context" src="/img/portfolio/drinkfles_context_02.jpg">
 
+
+<p class="a-l a-r col-8">Revolve Waterbottle is designed and developed in collaboration with <a href="https://www.linkedin.com/in/maarten-roos-345084134/">Maarten Roos</a></p>
+
+    <div class="grid-sizer"></div>
   </article>
   <!-- <div class="PageNavigation clearfix">
     
-      Previous: <a class="prev" href="/salad-shaker">Salad Shaker</a>
+      Previous: <a class="prev" href="/arduino-midi-controller">MIDI Controller</a>
     
     <span style="margin: 0 1em">|</span>
     
-      Next: <a class="next" href="/table-grill-concepts">Table Grill Concepts</a>
+      Next: <a class="next" href="/salad-shaker">Salad Shaker</a>
     
   </div> -->
-</div>
 
-
-
+  
 
 <footer>
-    <p>Stijn van Cuijk — Arnhem, 2019 — <a href="mailto:contact@stijn.vc">contact@stijn.vc</a></p>
+    <p class="width">Stijn van Cuijk — Arnhem, 2019 — <a href="mailto:contact@stijn.vc">contact@stijn.vc</a></p>
 </footer>
 
 <script>
-  $("#homepage .title a").fitText(.51);
 
-  $( ".process-toggle" ).click(function( e ) {
-    e.preventDefault();
-    $( ".process" ).removeClass('hidden');
-    $([document.documentElement, document.body]).animate({
-        scrollTop: $(".process-toggle").offset().top - 50
-    }, 600);
-  });
 
-  $( ".info" ).clone().appendTo( "#info-clone" );
+        $(document).ready(function(){
+          var $grid = $('.grid').masonry({
+            itemSelector: '.grid > *',
+            percentPosition: true,
+            columnWidth: '.grid-sizer',
+            transitionDuration: 0
+          });
+          // layout Masonry after each image loads
+          $grid.imagesLoaded().progress( function() {
+            $grid.masonry('layout');
+            $(".grid").fitVids();
+            $('.fade').removeClass('hidden');
+          });
 
-  function stickyInfo(){
+        });
 
-    var scrollDist = scrollDistance();
-    var yPos = getPosition($('article')) - 0;
-    if(scrollDist > yPos && viewportHeight() > $('.info').height() + 85){
-      $('.info').addClass('fixed');
-    }else{
-      $('.info').removeClass('fixed');
-    }
-    $('#info-clone .info.fixed').width($('article > .info').width());
-    $('#info-clone .info.fixed').css('left', $('article > .info').offset().left);
-
-  }
-
-  stickyInfo();
-  window.onscroll = function () {
-    stickyInfo();
-  };
-  $( window ).resize(function() {
-    stickyInfo();
-  });
-
-  function scrollDistance(){
-    return $(document).scrollTop();
-  }
-  function viewportHeight(){
-    //return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    //return window.innerHeight;
-    return $('#size-reference').height();
-  }
-  function viewportWidth(){
-    //return $('#size-reference').width();
-    return $( window ).width();
-  }
-  function getDistanceToViewport(element){
-    return getPosition(element)-viewportHeight();
-  }
-  function getPosition(element) {
-    var yPosition = element.offset().top;
-    return yPosition;
-  }
-  
-
-</script>
-<script src="/js/bootstrap.min.js"></script>
-<script src="/js/zoom.js"></script>
+    </script>
 </body>
 </html>
 

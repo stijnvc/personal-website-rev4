@@ -8,14 +8,12 @@ title: Projects
 
 
 {% for item in site.fp-collection %}
-<article class="clearfix {{ item.classes }} ">
+<article class="clearfix noselect {{ item.classes }} ">
   <a class="permalink" href="{{ item.url | prepend: site.baseurl }}">
     <div class="thumb">
       <img draggable="false" alt="thumbnail" src="{{ site.baseurl }}/img/{{ item.thumbnail }}">
-    </div>
-    <div class="info clearfix">
       <div class="description">
-        <h1>{{ item.title }} <br>{{ item.year }}</h1>
+        <p>{{ item.title }}</p>
       </div>
     </div>
   </a>
@@ -23,7 +21,10 @@ title: Projects
 {% endfor %}
 
 <style>
-a.projects {
-  color: white;
-}
+  a.projects {
+    background-position: 0 .85em;
+    background-size: 1px 1px;
+    background-image: linear-gradient(to right,rgba(0, 0, 0, 0.84) 100%,rgba(0, 0, 0, 0.84) 0);
+    background-repeat: repeat-x;
+  }
 </style>

@@ -1,11 +1,13 @@
 {% include head.html %}
 <body id="homepage">
-<div class="wrapper clearfix">
 {% include header.html %}
 
-<div id="main clearfix">
+<div class="wrapper">
+<div class="grid width fade hidden">
 {{ content }}
-{% include footer.html %}
+<div class="grid-sizer"></div>
 </div>
+
+{% include footer.html %}
 
 </div>
