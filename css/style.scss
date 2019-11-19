@@ -178,6 +178,9 @@ header {
     &:first-child {
       padding-top: $gutter;
     }
+    h1:first-child { 
+      margin-top: 0;
+    }
     p {
       margin-bottom: 1rem;
     }
