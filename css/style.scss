@@ -157,8 +157,8 @@ header {
   }
 }
 .width {
-  max-width: 1410px;
-  @media(max-width: 1440px) {
+  max-width: 1310px;
+  @media(max-width: 1340px) {
     max-width: 1200px;
   }
   @media(max-width: 1240px) {
@@ -178,7 +178,7 @@ header {
     &:first-child {
       padding-top: $gutter;
     }
-    h1:first-child { 
+    h1:first-child {
       margin-top: 0;
     }
     p {
