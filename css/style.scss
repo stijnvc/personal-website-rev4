@@ -37,21 +37,27 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Object Sans Web';
-	src: url('fonts/ObjectSans-Bold.woff') format('woff');
-	font-weight: 600;
+	font-family: 'Graphik Web';
+	src: url('fonts/Graphik-Thin.woff') format('woff');
+	font-weight: 200;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Object Sans Web';
-	src: url('fonts/ObjectSans-Black.woff') format('woff');
-	font-weight: 700;
+	font-family: 'Graphik Web';
+	src: url('fonts/Graphik-Light.woff') format('woff');
+	font-weight: 300;
 	font-style: normal;
 }
 @font-face {
-	font-family: 'Object Sans Web';
-	src: url('fonts/ObjectSans-Heavy.woff') format('woff');
-	font-weight: 800;
+	font-family: 'Graphik Web';
+	src: url('fonts/Graphik-Regular.woff') format('woff');
+	font-weight: 400;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Graphik Web';
+	src: url('fonts/Graphik-Medium.woff') format('woff');
+	font-weight: 500;
 	font-style: normal;
 }
 
@@ -66,7 +72,7 @@
           padding: 0;
 }
 body {
-  font-family: "Object Sans Web", sans-serif;
+  font-family: "Graphik Web", sans-serif;
   font-size: 20px;
   @media (max-width: 1240px){
     font-size: 18px;
@@ -74,7 +80,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: rgba(0,0,0,.55);
-  background-color: hsl(33, 5%, 98%);
+  background-color: hsl(33, 5%, 97%);
   @media (-webkit-min-device-pixel-ratio: 2),
          (min-resolution: 192dpi) {
     font-weight: 300;
@@ -124,7 +130,7 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: hsl(33, 5%, 98%);
+  background-color: hsl(33, 5%, 97%);
   .inner {
     margin: .5rem auto;
     padding: .5rem;
@@ -133,12 +139,13 @@ header {
       float: left;
       width: auto;
       opacity: .85;
+      margin-left: -.2rem;
     }
     nav {
       float: right;
       a {
         display: inline-block;
-        margin-left: 1rem;
+        margin-left: 2rem;
         padding-top: .3rem;
         padding-bottom: 0rem;
       }
