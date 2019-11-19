@@ -8,10 +8,9 @@ title: Projects
 
 
 {% for item in site.fp-collection %}
-<article class="clearfix noselect {{ item.classes }} ">
+<article class="clearfix portfolio-item noselect {{ item.classes }} ">
   <a class="permalink" href="{{ item.url | prepend: site.baseurl }}">
-    <div class="thumb">
-      <img draggable="false" alt="thumbnail" src="{{ site.baseurl }}/img/{{ item.thumbnail }}">
+    <div class="thumb" style="background-image: url({{ site.baseurl }}/img/{{ item.thumbnail }})" >
       <div class="description">
         <p>{{ item.title }}</p>
       </div>
