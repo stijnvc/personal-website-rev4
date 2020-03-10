@@ -1,0 +1,385 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@font-face {
+  font-family: 'Object Sans Web';
+  src: url("fonts/ObjectSans-Thin.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Object Sans Web';
+  src: url("fonts/ObjectSans-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Object Sans Web';
+  src: url("fonts/ObjectSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Object Sans Web';
+  src: url("fonts/ObjectSans-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url("fonts/Graphik-Thin.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url("fonts/Graphik-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url("fonts/Graphik-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Web';
+  src: url("fonts/Graphik-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Graphik Web", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.55);
+  background-color: #f8f7f7;
+  padding-top: calc(72px);
+}
+
+@media (max-width: 2060px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1360px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    font-weight: 300;
+  }
+}
+
+html {
+  overflow-y: scroll;
+}
+
+.fade {
+  transition: .3s ease opacity;
+}
+
+.fade.hidden {
+  opacity: 0;
+}
+
+.wrapper {
+  padding: 0 1rem 0 1.6rem;
+}
+
+a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.84);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, blockquote {
+  color: rgba(0, 0, 0, 0.84);
+  font-size: 1.3em;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin-bottom: .5rem;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  h1, h2, h3, h4, blockquote {
+    font-weight: 300;
+  }
+}
+
+blockquote {
+  font-size: 1.3em;
+}
+
+img, video {
+  width: 100%;
+  display: block;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  background-color: #f8f7f7;
+}
+
+header .inner {
+  margin: .5rem auto;
+  padding: 0.5rem 5px 0.5rem 0;
+}
+
+header .inner img.logo {
+  height: 2.5rem;
+  float: left;
+  width: auto;
+  opacity: .85;
+  margin-left: -.1rem;
+}
+
+header .inner nav {
+  float: right;
+}
+
+header .inner nav a {
+  display: inline-block;
+  margin-left: 2rem;
+  padding-top: 0.1rem;
+  padding-bottom: .2rem;
+}
+
+header .inner nav a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.85);
+}
+
+.width {
+  max-width: 2000px;
+}
+
+@media (max-width: 2060px) {
+  .width {
+    max-width: 1300px;
+  }
+}
+
+@media (max-width: 1360px) {
+  .width {
+    max-width: 1000px;
+  }
+}
+
+@media (max-width: 1040px) {
+  .width {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 840px) {
+  .width {
+    max-width: 600px;
+  }
+}
+
+.grid {
+  margin: 0 auto;
+  position: relative;
+}
+
+.grid > * {
+  width: 50%;
+  padding: 0 5px 5px 0;
+}
+
+.grid > p,
+.grid .text {
+  padding: 1.5em;
+}
+
+.grid > p:first-child,
+.grid .text:first-child {
+  padding-top: 5px;
+}
+
+.grid > p h1:first-child,
+.grid .text h1:first-child {
+  margin-top: 0;
+}
+
+.grid > p p,
+.grid .text p {
+  margin-bottom: 1rem;
+}
+
+.grid .col-8 {
+  width: 100%;
+}
+
+.grid .col-7 {
+  width: 87.5%;
+}
+
+.grid .col-6 {
+  width: 75%;
+}
+
+.grid .col-5 {
+  width: 62.5%;
+}
+
+.grid .col-4 {
+  width: 50%;
+}
+
+.grid .col-3 {
+  width: 37.5%;
+}
+
+.grid .col-2 {
+  width: 25%;
+}
+
+.grid .col-1 {
+  width: 12.5%;
+}
+
+.grid .align-left, .grid .a-l {
+  padding-left: 0;
+}
+
+.grid .align-right, .grid .a-r {
+  padding-right: 5px;
+}
+
+.grid .fix-2-1 a {
+  padding-bottom: 50%;
+}
+
+.grid .fix-1-1 a {
+  padding-bottom: 100%;
+}
+
+.grid .fix-1-2 a {
+  padding-bottom: 200%;
+}
+
+.grid a.permalink {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.grid .thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 5px;
+  bottom: 5px;
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.grid .thumb .description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 1rem;
+  color: white;
+}
+
+.grid .grid-sizer {
+  width: 12.5%;
+}
+
+@media (max-width: 840px) {
+  .grid > * {
+    width: 100% !important;
+    padding: 0 5px 5px 0 !important;
+  }
+}
+
+.grid > .portfolio-item {
+  padding: 0 !important;
+}
+
+.grid hr {
+  width: 100%;
+  padding: 0 !important;
+  border: none;
+}
+
+.grid div img, .grid div video {
+  margin-bottom: 5px;
+}
+
+.grid div img:last-child {
+  margin-bottom: 0;
+}
+
+.grid div.thumb {
+  overflow: hidden;
+}
+
+.grid .spacer {
+  padding: 0 !important;
+  height: .1px;
+}
+
+footer {
+  padding: 2rem 0;
+}
+
+footer p {
+  padding: 0 5px 5px 0;
+  margin: 0 auto;
+}
+
+.more-space > p, .more-space h1 {
+  margin-bottom: 2rem !important;
+}
+
+.grayscale {
+  filter: grayscale(100%);
+}
+
+.hide {
+  display: none;
+}

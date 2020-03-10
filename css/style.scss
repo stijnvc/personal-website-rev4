@@ -285,7 +285,7 @@ header {
     border: none;
   }
   div {
-    img {
+    img, video {
       margin-bottom: $gutter;
     }
     img:last-child {
@@ -316,4 +316,7 @@ footer {
 }
 .grayscale {
   filter: grayscale(100%);
+}
+.hide {
+  display: none;
 }
