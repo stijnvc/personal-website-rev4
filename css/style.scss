@@ -72,23 +72,24 @@ $gutter: 5px;
           padding: 0;
 }
 body {
-  font-family: "Graphik Web", sans-serif;
-  font-size: 24px;
-  @media(max-width: 2060px) {
-    font-size: 20px;
-  }
-  @media(max-width: 1360px) {
-    font-size: 18px;
-  }
+  //font-family: "Graphik Web", sans-serif;
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+  // @media(max-width: 2060px) {
+  //   font-size: 20px;
+  // }
+  // @media(max-width: 1360px) {
+  //   font-size: 18px;
+  // }
   line-height: 1.5;
   font-weight: 400;
   color: rgba(0,0,0,.55);
-  background-color: hsl(33, 5%, 97%);
+  background-color: hsl(0, 0%, 98%);
   @media (-webkit-min-device-pixel-ratio: 2),
          (min-resolution: 192dpi) {
-    font-weight: 300;
+    //font-weight: 300;
   }
-  padding-top: calc(72px);
+  padding-top: 72px;
 }
 html {
   overflow-y: scroll;
@@ -111,8 +112,9 @@ a:hover {
 }
 h1, h2, h3, h4, blockquote {
   color: rgba(0,0,0,.84);
-  font-size: 1.3em;
-  font-weight: 400;
+  //font-size: 1.3em;
+  font-size: 1em;
+  font-weight: 600;
   letter-spacing: 0;
   margin-bottom: .5rem;
   @media (-webkit-min-device-pixel-ratio: 2),
@@ -120,9 +122,9 @@ h1, h2, h3, h4, blockquote {
     font-weight: 300;
   }
 }
-blockquote {
-  font-size: 1.3em;
-}
+// blockquote {
+//   font-size: 1.3em;
+// }
 img, video {
   width: 100%;
   display: block;
@@ -133,12 +135,15 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: hsl(33, 5%, 97%);
+  background-color: hsl(0, 0%, 98%);
   .inner {
-    margin: .5rem auto;
+    margin: .5rem 0;
+    @media(max-width: 1064px) {
+      margin: .5rem auto;
+    }
     padding: .5rem $gutter .5rem 0;
     img.logo {
-      height: 2.5rem;
+      height: 2rem;
       float: left;
       width: auto;
       opacity: .85;
@@ -160,22 +165,23 @@ header {
   }
 }
 .width {
-  max-width: 2000px;
-  @media(max-width: 2060px) {
-    max-width: 1300px;
-  }
-  @media(max-width: 1360px) {
-    max-width: 1000px;
-  }
-  @media(max-width: 1040px) {
+  max-width: 1005px;
+  @media(max-width: 1064px) {
     max-width: 800px;
   }
-  @media(max-width: 840px) {
+  @media(max-width: 859px) {
     max-width: 600px;
   }
 }
+#page {
+  .grid {
+    margin-top: 1rem;
+  }
+}
 .grid {
-  margin: 0 auto;
+  @media(max-width: 1064px) {
+    margin: 0 auto;
+  }
   position: relative;
   & > * {
     width: 50%;
@@ -270,7 +276,7 @@ header {
   .grid-sizer {
     width: 12.5%;
   }
-  @media(max-width: 840px) {
+  @media(max-width: 859px) {
     & > * {
       width: 100% !important;
       padding: 0 $gutter $gutter 0 !important;
@@ -305,7 +311,10 @@ footer {
   padding: 2rem 0;
   p {
     padding: 0 $gutter $gutter 0;
-    margin: 0 auto;
+    margin: 0 0;
+    @media(max-width: 1064px) {
+      margin: 0 auto;
+    }
   }
 }
 .more-space {
