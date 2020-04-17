@@ -84,7 +84,7 @@ body {
   line-height: 1.5;
   font-weight: 400;
   color: rgba(0,0,0,.55);
-  background-color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 97%);
   @media (-webkit-min-device-pixel-ratio: 2),
          (min-resolution: 192dpi) {
     //font-weight: 300;
@@ -135,7 +135,7 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: hsl(0, 0%, 98%);
+  background-color: hsl(0, 0%, 97%);
   .inner {
     margin: .5rem 0;
     @media(max-width: 1064px) {
