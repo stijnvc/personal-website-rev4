@@ -81,7 +81,7 @@ body {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.55);
   background-color: #fafafa;
-  padding-top: 72px;
+  padding-top: 64px;
 }
 
 html {
@@ -162,7 +162,7 @@ header .inner nav {
 
 header .inner nav a {
   display: inline-block;
-  margin-left: 2rem;
+  margin-left: 1rem;
   padding-top: 0.1rem;
   padding-bottom: .2rem;
 }
