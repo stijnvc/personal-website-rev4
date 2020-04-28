@@ -82,14 +82,8 @@ header {
 }
 
 header .inner {
-  margin: .5rem 0;
+  margin: .5rem auto;
   padding: 0.5rem 5px 0.5rem 0;
-}
-
-@media (max-width: 1064px) {
-  header .inner {
-    margin: .5rem auto;
-  }
 }
 
 header .inner img.logo {
@@ -137,13 +131,8 @@ header .inner nav a:hover {
 }
 
 .grid {
+  margin: 0 auto;
   position: relative;
-}
-
-@media (max-width: 1064px) {
-  .grid {
-    margin: 0 auto;
-  }
 }
 
 .grid > * {
@@ -294,13 +283,7 @@ footer {
 
 footer p {
   padding: 0 5px 5px 0;
-  margin: 0 0;
-}
-
-@media (max-width: 1064px) {
-  footer p {
-    margin: 0 auto;
-  }
+  margin: 0 auto;
 }
 
 .more-space > p, .more-space h1 {
