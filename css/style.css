@@ -53,6 +53,11 @@ a:hover {
   text-decoration: underline;
 }
 
+article a, footer a {
+  color: rgba(0, 85, 34, 0.84);
+  text-decoration: underline;
+}
+
 h1, h2, h3, h4, blockquote {
   color: rgba(0, 0, 0, 0.84);
   font-size: 1em;
