@@ -1,0 +1,303 @@
+
+
+$main-color: #038a2d;
+$bg: #fff;
+$action: #038a2d;
+$accent-1: #F7931E;
+$text: #333;
+$accent-2: #474088;
+
+
+::selection {
+  background-color: rgba(255, 239, 79, 0.49);
+}
+::-moz-selection {
+  background-color: rgba(255, 239, 79, 0.49);
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix { display: inline-block; }
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 20px;
+  color: $text;
+  background: $bg;
+  @media all and (max-width: 840px) {
+    font-size: 18px;
+  }
+  @media all and (max-width: 700px) {
+    font-size: 16px;
+  }
+}
+img {
+  max-width: 100%;
+}
+.fa {
+  margin-right: 12px;
+}
+
+#logo {
+  fill: black;
+  #logo-point,
+  #logo-of {
+    fill: $main-color;
+  }
+  #logo-work {
+    fill: $main-color;
+  }
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 46px 0 20px 0;
+  background: $bg;
+  z-index: 999;
+  box-shadow: 0 30px 30px 0 $bg;
+  a.logo {
+    display: block;
+    float: left;
+    svg {
+      width: 300px;
+      height: 47px;
+    }
+  }
+  h1 {
+    float: right;
+    position: relative;
+    font-weight: 600;
+    font-size: 1.6em;
+    margin-top: 8px;
+  }
+  h1::before {
+    //content: "\\";
+    position: absolute;
+    left: -30px;
+    top: -17px;
+    font-size: 1.6em;
+    font-weight: 400;
+  }
+  @media all and (max-width: 840px) {
+    padding: 37px 0 20px 0;
+    box-shadow: 0 17px 17px 0 $bg;
+    a.logo {
+      svg {
+        width: 240px;
+        height: 37px;;
+      }
+    }
+    h1 {
+      font-size: 1.4em;
+      margin-top: 6px;
+    }
+  }
+  @media all and (max-width: 630px) {
+    h1 {
+      font-size: 1.1em;
+      margin-top: 8px;
+    }
+  }
+  @media all and (max-width: 555px) {
+    padding: 28px 0 20px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,.3);
+    background-color: rgba(255,255,255,.95);
+    h1 {
+      float: none;
+      text-align: center;
+      font-size: 1em;
+      font-weight: 300;
+    }
+    a.logo {
+      float: none;
+      svg {
+        width: 200px;
+        height: 31px;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+}
+.wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 30px;
+  @media all and (max-width: 720px) {
+    padding: 0 20px;  
+  }
+  p {
+    line-height: 1.5;
+    margin: 20px 0;
+    a {
+      color: $action;
+      border-bottom: 1px dotted $action;
+      text-decoration: none;
+      -webkit-transition: all .1s ease;
+      -moz-transition: all .1s ease;
+      -ms-transition: all .1s ease;
+      -o-transition: all .1s ease;
+      transition: all .1s ease;
+      border-radius: 2px;
+    }
+    a:hover {
+      background-color: $action;
+      border-bottom: 1px solid $action;
+      color: $bg;
+    }
+  }
+  em {
+    background-color: rgba(255, 239, 79, 0.49);
+  }
+  h2 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin: 20px 0;
+  }
+  .help {
+    cursor: help;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+  }
+  .slogan {
+    margin-top: 160px;
+    background: $accent-1;
+    background-image: url(img/layout/arrow.png);
+    background-size: contain;
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    h1 {
+      padding: 50px 70px 60px 50px;
+      color: $bg;
+      font-weight: 600;
+      font-size: 2.2em;
+      line-height: 1.4;
+    }
+    @media all and (max-width: 840px) {
+      margin-top: 120px;
+    }
+    @media all and (max-width: 720px) {
+      h1 {
+        padding: 30px 50px 40px 50px;
+        font-size: 2em;
+      }
+    }
+    @media all and (max-width: 555px) {
+      margin-top: 130px;
+      h1 {
+        padding: 25px 30px 30px 30px;
+        font-size: 1.6em;
+      }
+    }
+  }
+  .wie-1 {
+    margin-top: 20px;
+    font-weight: 300;
+  }
+  .content-block {
+    margin: 60px auto;
+    @media all and (max-width: 720px) {
+      margin: 50px auto;
+    }
+    @media all and (max-width: 700px) {
+      margin: 30px auto;
+    }
+  }
+  .waarom {
+    p {
+      padding: 20px 30px;
+      border-left: 1px solid black;
+      font-size: 1.4em;
+      @media all and (max-width: 555px) {
+        font-size: 1.2em;
+        padding: 12px 20px;
+      }
+    }
+  }
+  .wat {
+  }
+  .wie-2 {
+    .profile {
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,.3);
+      margin-top: 20px;
+    }
+    .col-30 {
+      float: left;
+      width: 30%;
+    }
+    .col-70 {
+      box-sizing: border-box;
+      float: left;
+      width: 70%;
+      padding-right: 30px;
+    }
+    @media all and (max-width: 650px) {
+      .fa {
+        display: none;
+      }
+    }
+    @media all and (max-width: 555px) {
+      margin-bottom: 45px;
+      .col-30 {
+        float: none;
+        width: 100%;
+      }
+      .col-70 {
+        float: none;
+        width: 100%;
+        padding: none;
+      }
+      img.profile {
+        float: left;
+        width: 30%;
+      }
+      .contact {
+        float: left;
+        width: 70%;
+        box-sizing: border-box;
+        padding-left: 20px;
+      }
+      .fa {
+        display: inline-block;
+      }
+    }
+  }
+  .inspiratie {
+    font-weight: 300;
+    span {
+      display: inline-block;
+    }
+  }
+}
+footer {
+  color: $bg;
+  background-color: $accent-2;
+  padding: 40px 0;
+  font-size: .8em;
+  margin-top: 80px;
+  text-align: center;
+  @media all and (max-width: 840px) {
+    padding: 30px 0;
+  }
+  @media all and (max-width: 720px) {
+    margin-top: 50px;
+  }
+  @media all and (max-width: 700px) {
+    margin-top: 30px;
+    padding: 20px 0;
+  }
+}
