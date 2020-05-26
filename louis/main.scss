@@ -66,7 +66,7 @@ header {
   padding: 46px 0 20px 0;
   background: $bg;
   z-index: 999;
-  box-shadow: 0 30px 30px 0 $bg;
+  box-shadow: 0 25px 25px 0 $bg;
   a.logo {
     display: block;
     float: left;
@@ -92,7 +92,7 @@ header {
   }
   @media all and (max-width: 840px) {
     padding: 37px 0 20px 0;
-    box-shadow: 0 17px 17px 0 $bg;
+    box-shadow: 0 10px 10px 0 $bg;
     a.logo {
       svg {
         width: 240px;
@@ -112,8 +112,10 @@ header {
   }
   @media all and (max-width: 555px) {
     padding: 28px 0 20px 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,.3);
-    background-color: rgba(255,255,255,.95);
+    box-shadow: none;
+    background-color: rgba(255,255,255,.5);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
     h1 {
       float: none;
       text-align: center;
@@ -136,7 +138,7 @@ header {
   margin: 0 auto;
   padding: 0 30px;
   @media all and (max-width: 720px) {
-    padding: 0 20px;  
+    padding: 0 20px;
   }
   p {
     line-height: 1.5;
