@@ -79,17 +79,10 @@ header {
     float: right;
     position: relative;
     font-weight: 600;
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin-top: 8px;
   }
-  h1::before {
-    //content: "\\";
-    position: absolute;
-    left: -30px;
-    top: -17px;
-    font-size: 1.6em;
-    font-weight: 400;
-  }
+
   @media all and (max-width: 840px) {
     padding: 37px 0 20px 0;
     box-shadow: 0 10px 10px 0 $bg;
@@ -100,13 +93,13 @@ header {
       }
     }
     h1 {
-      font-size: 1.4em;
+      font-size: 1.2em;
       margin-top: 6px;
     }
   }
   @media all and (max-width: 630px) {
     h1 {
-      font-size: 1.1em;
+      font-size: .95em;
       margin-top: 8px;
     }
   }
@@ -119,7 +112,7 @@ header {
     h1 {
       float: none;
       text-align: center;
-      font-size: 1em;
+      font-size: .95em;
       font-weight: 300;
     }
     a.logo {

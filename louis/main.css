@@ -95,16 +95,8 @@ header h1 {
   float: right;
   position: relative;
   font-weight: 600;
-  font-size: 1.6em;
+  font-size: 1.4em;
   margin-top: 8px;
-}
-
-header h1::before {
-  position: absolute;
-  left: -30px;
-  top: -17px;
-  font-size: 1.6em;
-  font-weight: 400;
 }
 
 @media all and (max-width: 840px) {
@@ -117,14 +109,14 @@ header h1::before {
     height: 37px;
   }
   header h1 {
-    font-size: 1.4em;
+    font-size: 1.2em;
     margin-top: 6px;
   }
 }
 
 @media all and (max-width: 630px) {
   header h1 {
-    font-size: 1.1em;
+    font-size: .95em;
     margin-top: 8px;
   }
 }
@@ -140,7 +132,7 @@ header h1::before {
   header h1 {
     float: none;
     text-align: center;
-    font-size: 1em;
+    font-size: .95em;
     font-weight: 300;
   }
   header a.logo {
