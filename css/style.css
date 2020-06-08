@@ -205,18 +205,6 @@ header .inner nav a:hover {
   padding-right: 5px;
 }
 
-.grid .fix-2-1 a {
-  padding-bottom: 50%;
-}
-
-.grid .fix-1-1 a {
-  padding-bottom: 100%;
-}
-
-.grid .fix-1-2 a {
-  padding-bottom: 200%;
-}
-
 .grid a.permalink {
   display: block;
   width: 100%;
@@ -224,24 +212,14 @@ header .inner nav a:hover {
 }
 
 .grid .thumb {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 5px;
-  bottom: 5px;
-  background-size: cover;
-  background-position: center;
+  margin-right: 5px;
+  margin-bottom: 5px;
   background-color: rgba(0, 0, 0, 0.3);
 }
 
 .grid .thumb .description {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
   width: 100%;
   padding: 1rem;
-  color: white;
 }
 
 .grid .grid-sizer {
@@ -301,4 +279,66 @@ footer p {
 
 .hide {
   display: none;
+}
+
+/*! http://responsiveslides.com v1.55 by @viljamis */
+.rslides {
+  position: relative;
+  list-style: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-color: #EFEFEF;
+}
+
+.rslides_nav {
+  position: absolute;
+  width: 35%;
+  bottom: 5px;
+  top: 0;
+  z-index: 666;
+  opacity: 0;
+  transition: .2s ease opacity;
+}
+
+.rslides_nav.next {
+  right: 5px;
+  background-image: linear-gradient(270deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.rslides_nav.next:hover {
+  opacity: 1;
+}
+
+.rslides_nav.prev {
+  left: 0;
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.rslides_nav.prev:hover {
+  opacity: 1;
+}
+
+.rslides li {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  display: none;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.rslides li:first-child {
+  position: relative;
+  display: block;
+  float: left;
+}
+
+.rslides img {
+  display: block;
+  height: auto;
+  float: left;
+  width: 100%;
+  border: 0;
 }

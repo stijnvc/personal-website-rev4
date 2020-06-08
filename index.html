@@ -6,14 +6,15 @@ title: Projects
 
 
 
-
-{% for item in site.fp-collection %}
+{% assign sorted = site.fp-collection | sort: 'date' | reverse %}
+{% for item in sorted %}
 <article class="clearfix portfolio-item noselect {{ item.classes }} ">
-  <a class="permalink" href="{{ item.url | prepend: site.baseurl }}">
-    <div class="thumb" style="background-image: url({{ site.baseurl }}/img/{{ item.thumbnail }})" >
-      <div class="description">
+  <a title="{{ item.title }}, {{ item.year }}" class="permalink" href="{{ item.url | prepend: site.baseurl }}">
+    <div class="thumb">
+      <img alt="{{ item.title }}" src="{{ site.baseurl }}/img/{{ item.thumbnail }}">
+      <!-- <div class="description">
         <p>{{ item.title }}</p>
-      </div>
+      </div> -->
     </div>
   </a>
 </article>
