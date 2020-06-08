@@ -2,7 +2,10 @@
 <body id="homepage">
 {% include header.html %}
 
-<div class="wrapper">
+<div class="loading noselect">
+    <p>Loading projects...</p>
+</div>
+<div class="wrapper fade hidden">
 <div class="grid width ">
 {{ content }}
 <div class="grid-sizer"></div>

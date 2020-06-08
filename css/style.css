@@ -32,12 +32,19 @@ html {
   overflow-y: scroll;
 }
 
-.fade {
-  transition: .3s ease opacity;
-}
-
 .fade.hidden {
   opacity: 0;
+}
+
+.loading {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 45vh;
+}
+
+.loading.hidden {
+  display: none;
 }
 
 .wrapper {

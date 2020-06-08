@@ -95,10 +95,18 @@ html {
   overflow-y: scroll;
 }
 .fade {
-  transition: .3s ease opacity;
+  &.hidden {
+    opacity: 0;
+  }
 }
-.fade.hidden {
-  opacity: 0;
+.loading {
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  top: 45vh;
+  &.hidden {
+    display: none;
+  }
 }
 .wrapper {
   padding: 0 1rem 0 1.6rem;
