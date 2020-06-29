@@ -14,7 +14,10 @@ url: http://localhost:4000
 baseurl: ""
 
 collections:
-  fp-collection:
+  projects:
+    output: true
+    permalink: /:permalink
+  ideas:
     output: true
     permalink: /:permalink
 
@@ -30,7 +33,13 @@ permalink: pretty
 defaults:
   - scope:
       path: ""
-      type: "fp-collection"
+      type: "projects"
+    values:
+      layout: "page"
+      excerpt_separator: "<!--more-->"
+  - scope:
+      path: ""
+      type: "ideas"
     values:
       layout: "page"
       excerpt_separator: "<!--more-->"

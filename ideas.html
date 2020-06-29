@@ -1,12 +1,12 @@
 ---
 layout: homepage
-title: Projects
+title: Ideas
 ---
 
 
 
 
-{% assign sorted = site.projects | sort: 'date' | reverse %}
+{% assign sorted = site.ideas | sort: 'date' | reverse %}
 {% for item in sorted %}
 <article class="clearfix portfolio-item noselect {{ item.classes }} ">
   <a title="{{ item.title }}, {{ item.year }}" class="permalink" href="{{ item.url | prepend: site.baseurl }}">
@@ -21,7 +21,7 @@ title: Projects
 {% endfor %}
 
 <style>
-  a.projects {
+  a.ideas {
     border-bottom: 1px solid rgba(0,0,0,.85);
   }
 </style>
