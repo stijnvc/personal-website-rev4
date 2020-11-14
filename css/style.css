@@ -232,9 +232,18 @@ header .inner nav a:hover {
   margin-top: 0;
 }
 
-.grid > p p,
-.grid .text p {
+.grid > p p, .grid > p ul, .grid > p ol,
+.grid .text p,
+.grid .text ul,
+.grid .text ol {
   margin-bottom: 1.5rem;
+}
+
+.grid > p li,
+.grid .text li {
+  margin-left: 30px;
+  padding-left: .5rem;
+  margin-bottom: .5rem;
 }
 
 .grid .col-8 {
@@ -323,7 +332,7 @@ header .inner nav a:hover {
   margin-bottom: 6px;
 }
 
-.grid div img:last-child {
+.grid div img:last-child, .grid div video:last-child {
   margin-bottom: 0;
 }
 
@@ -415,12 +424,39 @@ footer p {
   border: 0;
 }
 
+.rslides_tabs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  text-align: center;
+}
+
+.rslides_tabs li {
+  display: inline-block;
+}
+
+.rslides_tabs li a {
+  display: inline-block;
+  padding: 1em .5em;
+  color: rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+}
+
+.rslides_tabs li.rslides_here a {
+  color: rgba(0, 0, 0, 0.84);
+}
+
 @media (prefers-color-scheme: dark) {
   .light-mode {
     display: none;
   }
   article img {
     filter: brightness(0.9);
+  }
+  .line-art {
+    filter: invert(1);
   }
 }
 
