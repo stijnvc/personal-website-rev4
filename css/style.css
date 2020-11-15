@@ -12,13 +12,6 @@
 }
 
 @font-face {
-  font-family: 'Object Sans Web';
-  src: url("fonts/ObjectSans-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Graphik Web';
   src: url("fonts/Graphik-Thin.woff") format("woff");
   font-weight: 200;
@@ -60,7 +53,11 @@ body {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.84);
   background-color: #f7f7f7;
-  padding-top: 64px;
+  padding-top: 60px;
+}
+
+body b {
+  font-weight: 500;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -73,6 +70,9 @@ body {
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   body {
     font-weight: 300;
+  }
+  body b {
+    font-weight: 400;
   }
 }
 
@@ -153,11 +153,10 @@ header .inner {
 }
 
 header .inner img.logo {
-  height: 2rem;
+  height: 1.75rem;
   float: left;
   width: auto;
   opacity: .85;
-  margin-left: -.1rem;
 }
 
 @media (max-width: 500px) {
@@ -173,7 +172,6 @@ header .inner nav {
 header .inner nav a {
   display: inline-block;
   margin-left: 1rem;
-  padding-bottom: .2rem;
 }
 
 header .inner nav a:hover {
