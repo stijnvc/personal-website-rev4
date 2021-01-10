@@ -450,9 +450,6 @@ footer p {
   .light-mode {
     display: none;
   }
-  article img {
-    filter: brightness(0.9);
-  }
   .line-art {
     filter: invert(1);
   }
