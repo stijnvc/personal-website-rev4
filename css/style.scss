@@ -89,10 +89,6 @@ body {
   }
   color: rgba(0,0,0,.84); // oud: .55
   background-color: hsl(0, 0%, 97%);
-  @media (prefers-color-scheme: dark) {
-    background-color: hsl(0, 0%, 14%);
-    color: rgba(255,255,255,.84); // oud: .55
-  }
   @media (-webkit-min-device-pixel-ratio: 2),
          (min-resolution: 192dpi) {
     font-weight: 300;
@@ -134,9 +130,6 @@ a:hover {
 article, footer {
   a {
     color: rgba(0,140,56,.84);
-    @media (prefers-color-scheme: dark) {
-      color: rgba(116, 224, 159, .84);
-    }
     text-decoration: underline;
   }
 }
@@ -154,6 +147,8 @@ h1, h2, h3, h4, blockquote {
 img, video {
   width: 100%;
   display: block;
+  image-rendering: optimize-contrast;    
+  image-rendering: -webkit-optimize-contrast
 }
 header {
   position: fixed;
@@ -162,9 +157,6 @@ header {
   left: 0;
   z-index: 999;
   background-color: hsl(0, 0%, 97%);
-  @media (prefers-color-scheme: dark) {
-    background-color: hsl(0, 0%, 14%);
-  }
   .inner {
     margin: .5rem auto;
     padding: .5rem $gutter .5rem 0;
@@ -186,15 +178,15 @@ header {
       a:hover {
         text-decoration: none;
         border-bottom: 1px solid rgba(0,0,0,.85);
-        @media (prefers-color-scheme: dark) {
-          border-bottom: 1px solid rgba(255,255,255,.85);
-        }
       }
     }
   }
 }
 .width {
-  max-width: 1000px + $gutter;
+  max-width: 1400px + $gutter;
+  @media(max-width: 1464px) {
+    max-width: 1000px;
+  }
   @media(max-width: 1064px) {
     max-width: 800px;
   }
@@ -419,16 +411,16 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .light-mode {
-    display: none;
-  }
-  .line-art {
-    filter: invert(1);
-  }
-}
-@media (prefers-color-scheme: light) {
-  .dark-mode {
-    display: none;
-  }
-}
+// @media (prefers-color-scheme: dark) {
+//   .light-mode {
+//     display: none;
+//   }
+//   .line-art {
+//     filter: invert(1);
+//   }
+// }
+// @media (prefers-color-scheme: light) {
+//   .dark-mode {
+//     display: none;
+//   }
+// }

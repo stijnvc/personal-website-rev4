@@ -60,13 +60,6 @@ body b {
   font-weight: 500;
 }
 
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #242424;
-    color: rgba(255, 255, 255, 0.84);
-  }
-}
-
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   body {
     font-weight: 300;
@@ -113,12 +106,6 @@ article a, footer a {
   text-decoration: underline;
 }
 
-@media (prefers-color-scheme: dark) {
-  article a, footer a {
-    color: rgba(116, 224, 159, 0.84);
-  }
-}
-
 h1, h2, h3, h4, blockquote {
   color: inherit;
   font-size: 1.2em;
@@ -130,6 +117,8 @@ h1, h2, h3, h4, blockquote {
 img, video {
   width: 100%;
   display: block;
+  image-rendering: optimize-contrast;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 header {
@@ -139,12 +128,6 @@ header {
   left: 0;
   z-index: 999;
   background-color: #f7f7f7;
-}
-
-@media (prefers-color-scheme: dark) {
-  header {
-    background-color: #242424;
-  }
 }
 
 header .inner {
@@ -179,14 +162,14 @@ header .inner nav a:hover {
   border-bottom: 1px solid rgba(0, 0, 0, 0.85);
 }
 
-@media (prefers-color-scheme: dark) {
-  header .inner nav a:hover {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.85);
-  }
+.width {
+  max-width: 1406px;
 }
 
-.width {
-  max-width: 1006px;
+@media (max-width: 1464px) {
+  .width {
+    max-width: 1000px;
+  }
 }
 
 @media (max-width: 1064px) {
@@ -444,19 +427,4 @@ footer p {
 
 .rslides_tabs li.rslides_here a {
   color: rgba(0, 0, 0, 0.84);
-}
-
-@media (prefers-color-scheme: dark) {
-  .light-mode {
-    display: none;
-  }
-  .line-art {
-    filter: invert(1);
-  }
-}
-
-@media (prefers-color-scheme: light) {
-  .dark-mode {
-    display: none;
-  }
 }

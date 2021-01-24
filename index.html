@@ -11,7 +11,7 @@ title: Projects
 <article class="clearfix portfolio-item noselect {{ item.classes }} ">
   <a title="{{ item.title }}, {{ item.year }}" class="permalink" href="{{ item.url | prepend: site.baseurl }}">
     <div class="thumb">
-      <img alt="{{ item.title }}" src="{{ site.baseurl }}/img/{{ item.thumbnail }}" srcset="{{ site.baseurl }}/img/2x/{{ item.thumbnail }} 2x">
+      <img alt="{{ item.title }}" src="{{ site.baseurl }}/img/{{ item.thumbnail }}">
       <!-- <div class="description">
         <p>{{ item.title }}</p>
       </div> -->
@@ -23,11 +23,5 @@ title: Projects
 <style>
   a.projects {
     border-bottom: 1px solid rgba(0,0,0,.85);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    a.projects {
-      border-bottom: 1px solid rgba(255,255,255,.85);
-    }
   }
 </style>
