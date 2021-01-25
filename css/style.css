@@ -52,8 +52,8 @@ body {
   line-height: 1.6;
   font-weight: 400;
   color: rgba(0, 0, 0, 0.84);
-  background-color: #f7f7f7;
-  padding-top: 60px;
+  background-color: white;
+  padding-top: 92px;
 }
 
 body b {
@@ -111,7 +111,7 @@ h1, h2, h3, h4, blockquote {
   font-size: 1.2em;
   font-weight: 500;
   letter-spacing: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
 }
 
 img, video {
@@ -121,18 +121,34 @@ img, video {
   image-rendering: -webkit-optimize-contrast;
 }
 
+.darker {
+  filter: brightness(97%);
+}
+
 header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: #f7f7f7;
+  background-color: white;
 }
 
 header .inner {
-  margin: .5rem auto;
-  padding: 0.5rem 6px 0.5rem 0;
+  margin: 1rem auto;
+  padding: 1rem 6px 1rem 0;
+}
+
+header .inner .logo-box {
+  overflow: hidden;
+  display: block;
+  float: left;
+}
+
+@media (max-width: 450px) {
+  header .inner .logo-box {
+    width: 52px;
+  }
 }
 
 header .inner img.logo {
@@ -140,12 +156,6 @@ header .inner img.logo {
   float: left;
   width: auto;
   opacity: .85;
-}
-
-@media (max-width: 500px) {
-  header .inner img.logo {
-    height: 1.7rem;
-  }
 }
 
 header .inner nav {
@@ -182,10 +192,6 @@ header .inner nav a:hover {
   .width {
     max-width: 600px;
   }
-}
-
-#page .grid {
-  margin-top: 1rem;
 }
 
 .grid {
@@ -273,15 +279,35 @@ header .inner nav a:hover {
   position: relative;
 }
 
+.grid div img, .grid div video {
+  margin-bottom: 6px;
+}
+
+.grid div img:last-child, .grid div video:last-child {
+  margin-bottom: 0;
+}
+
+.grid div.thumb {
+  overflow: hidden;
+}
+
 .grid .thumb {
   margin-right: 6px;
   margin-bottom: 6px;
-  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.grid .thumb img, .grid .thumb video {
+  margin-bottom: 0 !important;
 }
 
 .grid .thumb .description {
   width: 100%;
   padding: 1rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
 
 .grid .grid-sizer {
@@ -309,25 +335,13 @@ header .inner nav a:hover {
   border: none;
 }
 
-.grid div img, .grid div video {
-  margin-bottom: 6px;
-}
-
-.grid div img:last-child, .grid div video:last-child {
-  margin-bottom: 0;
-}
-
-.grid div.thumb {
-  overflow: hidden;
-}
-
 .grid .spacer {
   padding: 0 !important;
   height: .1px;
 }
 
 footer {
-  padding: 2rem 0;
+  padding: 6rem 0 3rem 0;
 }
 
 footer p {

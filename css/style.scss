@@ -88,7 +88,7 @@ body {
     font-weight: 500;
   }
   color: rgba(0,0,0,.84); // oud: .55
-  background-color: hsl(0, 0%, 97%);
+  background-color: white;
   @media (-webkit-min-device-pixel-ratio: 2),
          (min-resolution: 192dpi) {
     font-weight: 300;
@@ -96,7 +96,7 @@ body {
       font-weight: 400;
     }
   }
-  padding-top: 60px;
+  padding-top: 92px;
 }
 
 
@@ -139,7 +139,7 @@ h1, h2, h3, h4, blockquote {
   font-size: 1.2em;
   font-weight: 500;
   letter-spacing: 0;
-  margin-bottom: .5rem;
+  margin-bottom: 1.5rem;
 }
 // blockquote {
 //   font-size: 1.3em;
@@ -147,8 +147,11 @@ h1, h2, h3, h4, blockquote {
 img, video {
   width: 100%;
   display: block;
-  image-rendering: optimize-contrast;    
+  image-rendering: optimize-contrast;
   image-rendering: -webkit-optimize-contrast
+}
+.darker{
+  filter: brightness(97%);
 }
 header {
   position: fixed;
@@ -156,18 +159,23 @@ header {
   top: 0;
   left: 0;
   z-index: 999;
-  background-color: hsl(0, 0%, 97%);
+  background-color: white;
   .inner {
-    margin: .5rem auto;
-    padding: .5rem $gutter .5rem 0;
+    margin: 1rem auto;
+    padding: 1rem $gutter 1rem 0;
+    .logo-box{
+      overflow: hidden;
+      @media(max-width: 450px) {
+        width: 52px;
+      }
+      display: block;
+      float: left;
+    }
     img.logo {
       height: 1.75rem;
       float: left;
       width: auto;
       opacity: .85;
-      @media(max-width: 500px) {
-        height: 1.7rem;
-      }
     }
     nav {
       float: right;
@@ -196,7 +204,7 @@ header {
 }
 #page {
   .grid {
-    margin-top: 1rem;
+    //margin-top: 1rem;
   }
 }
 .grid {
@@ -259,13 +267,32 @@ header {
     width: 100%;
     position: relative;
   }
+  div {
+    img, video {
+      margin-bottom: $gutter;
+    }
+    img:last-child, video:last-child {
+      margin-bottom: 0;
+    }
+  }
+  div.thumb {
+    overflow: hidden;
+  }
   .thumb {
     margin-right: $gutter;
     margin-bottom: $gutter;
-    background-color: rgba(0,0,0,.3);
+    // background-color: rgba(0,0,0,.3);
+    img, video {
+      margin-bottom: 0 !important;
+    }
     .description {
       width: 100%;
       padding: 1rem;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      color: rgba(0,0,0,.5);
+      text-decoration: none;
     }
   }
   .grid-sizer {
@@ -289,17 +316,6 @@ header {
     padding: 0 !important;
     border: none;
   }
-  div {
-    img, video {
-      margin-bottom: $gutter;
-    }
-    img:last-child, video:last-child {
-      margin-bottom: 0;
-    }
-  }
-  div.thumb {
-    overflow: hidden;
-  }
   .spacer {
     padding: 0 !important;
     height: .1px;
@@ -307,7 +323,7 @@ header {
 }
 
 footer {
-  padding: 2rem 0;
+  padding: 6rem 0 3rem 0;
   p {
     padding: 0 $gutter $gutter 0;
     margin: 0 auto;
