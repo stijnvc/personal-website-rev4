@@ -20,6 +20,12 @@ collections:
   ideas:
     output: true
     permalink: /:permalink
+  old-projects:
+    output: true
+    permalink: /:permalink
+  personal-projects:
+    output: true
+    permalink: /:permalink
 
 ##################
 # BUILD SETTINGS #
@@ -40,6 +46,18 @@ defaults:
   - scope:
       path: ""
       type: "ideas"
+    values:
+      layout: "page"
+      excerpt_separator: "<!--more-->"
+  - scope:
+      path: ""
+      type: "personal-projects"
+    values:
+      layout: "page"
+      excerpt_separator: "<!--more-->"
+  - scope:
+      path: ""
+      type: "old-projects"
     values:
       layout: "page"
       excerpt_separator: "<!--more-->"
