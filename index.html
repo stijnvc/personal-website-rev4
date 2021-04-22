@@ -1,27 +1,99 @@
 ---
-layout: homepage
-title: Projects
+layout: page
+title: Work
 ---
 
+<img class="col-8 darker" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_in_hand.jpg">
+<img class="col-8" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_materials_1.jpg">
+<img class="col-8" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_materials_2.jpg">
+<img class="col-8" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_sideviews.jpg">
+<img class="col-8 darker" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_internal_components.jpg">
+<img class="col-8 darker" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_proto_exploded.jpg">
+<img class="col-8" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_context_photo.jpg">
+<img class="col-8" alt="Sony ES1 Electronic Screwdriver" src="img/uid/es1_context.jpg">
+
+<hr class="gap">
+
+<img class="col-8" alt="Ascender Tethering System" src="img/uid/ats_money_shot.jpg">
+<img class="col-8" alt="Ascender Tethering System" src="img/uid/ats_all_parts.jpg">
+<img class="col-8" alt="Ascender Tethering System" src="img/uid/ats_bag_positions.jpg">
+<img alt="Ascender Tethering System" src="img/uid/ats_carabiner_hero_shot.jpg">
+<img alt="Ascender Tethering System" src="img/uid/ats_retractor_hero.jpg">
+<hr>
+<img class="col-8" alt="Ascender Tethering System" src="img/uid/ats_bag_models.jpg">
+<img alt="Ascender Tethering System" src="img/uid/ats_retractor_photo.jpg">
+<img alt="Ascender Tethering System" src="img/uid/ats_context_shot.jpg">
+
+<hr class="gap">
+
+
+<img class="col-8" alt="Electrolux Muho" src="img/muho/muho-context-shot.jpg">
+<img class="col-2" alt="Electrolux Muho" src="img/uid/muho_sb_1.jpg">
+<img class="col-2" alt="Electrolux Muho" src="img/uid/muho_sb_2.jpg">
+<img class="col-2" alt="Electrolux Muho" src="img/uid/muho_sb_3.jpg">
+<img class="col-2" alt="Electrolux Muho" src="img/uid/muho_sb_4.jpg">
+<img class="col-8" alt="Electrolux Muho" src="img/muho/muho-models.jpg">
+<img class="col-8" alt="Electrolux Muho" src="img/muho/muho-context-shot-2.jpg">
+
+<hr class="gap">
+
+<img class="col-8" alt="Mosaic Play Tower Impression" src="img/mosaic/mosaic-play-tower-impression.jpg">
+<img class="col-4" alt="Mosaic Play Tower Isometric Overview" src="img/mosaic/mosaic-play-tower-isometric.jpg">
+<img class="col-4" alt="Mosaic Play Tower Naked Frame" src="img/mosaic/mosaic-play-tower-frame.jpg">
+<div class="slides col-8">
+  <ul class="rslides">
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-01.jpg"></li>
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-02.jpg"></li>
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-03.jpg"></li>
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-04.jpg"></li>
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-05.jpg"></li>
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-06.jpg"></li>
+    <li><img alt="Mosaic Play Tower Variation" src="img/mosaic/mosaic-play-tower-variations-07.jpg"></li>
+  </ul>
+</div>
+
+<hr class="gap">
+
+<img class="col-8" alt="seating system hero image" src="img/seating-system/ss-hero.jpg">
+<img class="col-8 darker" alt="seating system configuration" src="img/seating-system/ss-config-1.jpg">
+<img class="col-8 darker" alt="seating system configuration" src="img/seating-system/ss-config-2.jpg">
+<img class="col-8 darker" alt="seating system sketch" src="img/seating-system/ss-sketch.jpg">
+
+<hr class="gap">
+
+<img class="col-8 darker" alt="kinbaku chair parts" src="/img/chair/chair-colors.jpg">
+<img class="col-8" alt="kinbaku chair hero" src="/img/chair/chair-hero-alt.jpg">
+<img class="col-8" alt="kinbaku chair parts" src="/img/chair/chair-parts.jpg">
+<img class="col-4" alt="kinbaku chair constructing" src="/img/chair/chair-build.jpg">
+<img class="col-4" alt="kinbaku chair constructing" src="/img/chair/chair-detail-1.jpg">
 
 
 
-{% assign sorted = site.projects | sort: 'date' | reverse %}
-{% for item in sorted %}
-<article class="clearfix portfolio-item noselect {{ item.classes }} ">
-  <a title="{{ item.title }}, {{ item.year }}" class="permalink" href="{{ item.url | prepend: site.baseurl }}">
-    <div class="thumb">
-      <img alt="{{ item.title }}" src="{{ site.baseurl }}/img/{{ item.thumbnail }}">
-      <div class="description">
-        <p>{{ item.title }}, {{ item.year }}</p>
-      </div>
-    </div>
-  </a>
-</article>
-{% endfor %}
 
+
+
+<script>
+  $(".rslides").responsiveSlides({
+    auto: true,             // Boolean: Animate automatically, true or false
+    speed: 1000,            // Integer: Speed of the transition, in milliseconds
+    timeout: 4000,          // Integer: Time between slide transitions, in milliseconds
+    pager: false,           // Boolean: Show pager, true or false
+    nav: true,             // Boolean: Show navigation, true or false
+    random: true,          // Boolean: Randomize the order of the slides, true or false
+    pause: true,           // Boolean: Pause on hover, true or false
+    pauseControls: true,    // Boolean: Pause when hovering controls, true or false
+    prevText: "",   // String: Text for the "previous" button
+    nextText: "",       // String: Text for the "next" button
+    maxwidth: "",           // Integer: Max-width of the slideshow, in pixels
+    navContainer: "",       // Selector: Where controls should be appended to, default is after the 'ul'
+    manualControls: "",     // Selector: Declare custom pager navigation
+    namespace: "rslides",   // String: Change the default namespace used
+    before: function(){},   // Function: Before callback
+    after: function(){}     // Function: After callback
+  });
+</script>
 <style>
-  a.projects {
+  a.work {
     border-bottom: 1px solid rgba(0,0,0,.85);
   }
 </style>

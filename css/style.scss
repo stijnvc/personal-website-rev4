@@ -191,8 +191,8 @@ header {
   }
 }
 .width {
-  max-width: 1400px + $gutter;
-  @media(max-width: 1464px) {
+  max-width: 1200px;
+  @media(max-width: 1264px) {
     max-width: 1000px;
   }
   @media(max-width: 1064px) {
@@ -315,6 +315,9 @@ header {
     width: 100%;
     padding: 0 !important;
     border: none;
+  }
+  hr.gap {
+    height: 20rem;
   }
   .spacer {
     padding: 0 !important;

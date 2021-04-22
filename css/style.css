@@ -173,10 +173,10 @@ header .inner nav a:hover {
 }
 
 .width {
-  max-width: 1406px;
+  max-width: 1200px;
 }
 
-@media (max-width: 1464px) {
+@media (max-width: 1264px) {
   .width {
     max-width: 1000px;
   }
@@ -333,6 +333,10 @@ header .inner nav a:hover {
   width: 100%;
   padding: 0 !important;
   border: none;
+}
+
+.grid hr.gap {
+  height: 20rem;
 }
 
 .grid .spacer {
