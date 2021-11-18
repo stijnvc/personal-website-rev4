@@ -1,0 +1,167 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+      <script src="{{ site.baseurl }}/js/jquery-3.3.1.min.js"></script>
+      <script src="build/pdf.js"></script>
+        <link rel="stylesheet" href="css/main.min.css" />
+  </head>
+  <body>
+
+
+<div style="display: none;" id="pages">
+  <h1>My Portfolio</h1>
+</div>
+
+    <script>
+      $(document).ready(function(){
+
+      // If absolute URL from the remote server is provided, configure the CORS
+      // header on that server.
+      var url = 'portfolio.pdf';
+
+      // Loaded via <script> tag, create shortcut to access PDF.js exports.
+      var pdfjsLib = window['pdfjs-dist/build/pdf'];
+
+      // The workerSrc property shall be specified.
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'build/pdf.worker.js';
+
+      var pdfDoc = null,
+          pageNum = 1,
+          pageRendering = false,
+          pageNumPending = null,
+          scale = 1,
+          pixelRatio = window.devicePixelRatio,
+          renderQueue = [];
+
+      function resize(){
+        console.log("resize");
+        var pages = $('#pages');
+        var viewportWidth = $(window).width();
+        var pageWidth = pages.width();
+        var ratio = pages.height()/pageWidth;
+        if(viewportWidth < pageWidth){
+          scaleFactorX = viewportWidth/pageWidth;
+          pages.css('transform', 'translate(-50%, 0) scale(' + scaleFactorX + ')');
+        }else{
+          pages.css('transform', '');
+        }
+
+      }
+
+
+      function preparePage(num) {
+        console.log("preparePage");
+        pageRendering = true;
+        // Using promise to fetch the page.
+
+        var canvas = document.createElement('canvas');
+        canvas.id = 'page-' + num;
+        $('#pages').append(canvas);
+        var ctx = canvas.getContext('2d');
+
+        pdfDoc.getPage(num).then(function(page) {
+          console.log("get page");
+          var viewport = page.getViewport({ scale: pixelRatio });
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          canvas.style.width = `${(viewport.width * scale) / pixelRatio}px`;
+          canvas.style.height = `${(viewport.height * scale) / pixelRatio}px`;
+
+          // Render PDF page into canvas context
+          var renderContext = {
+            canvasContext: ctx,
+            viewport: viewport
+          };
+          renderQueue[num] = {
+            page: page,
+            renderContext: renderContext,
+            canvas: canvas
+          };
+
+        }).then(function(){
+          if(num == 1){
+            console.log(renderQueue);
+            console.log(num);
+            $('#pages').show();
+            resize();
+            $(window).on("resize", function(){
+                resize();
+            });
+            renderPage(num, renderQueue[num].page, renderQueue[num].renderContext, renderQueue[num].canvas);
+          }
+
+        });
+      }
+
+      function renderPage(num, page, renderContext, canvas) {
+
+
+
+        var renderTask = page.render(renderContext);
+        console.log("renderPage");
+
+        renderTask.promise.then(function() {
+
+
+
+          return textContent =  page.getTextContent();
+          console.log("get text");
+
+        }).then(function(textContent){
+
+            console.log("render text");
+
+            // Assign CSS to the textLayer element
+            var textLayer = document.createElement('div');
+            textLayer.id = 'page-text-' + num;
+            textLayer.classList.add('textLayer');
+
+            textLayer.style.left = canvas.offsetLeft + 'px';
+            textLayer.style.top = canvas.offsetTop + 'px';
+            textLayer.style.height = canvas.offsetHeight + 'px';
+            textLayer.style.width = canvas.offsetWidth + 'px';
+
+            viewport = page.getViewport({ scale: scale });
+
+            // Pass the data to the method for rendering of text over the pdf canvas.
+            pdfjsLib.renderTextLayer({
+              textContent: textContent,
+              container: textLayer,
+              viewport: viewport,
+              textDivs: []
+            });
+
+            $(canvas).after(textLayer);
+
+
+        }).then(function(){
+          if(renderQueue.length - 1 > num){
+            num++;
+            console.log(num);
+            renderPage(num, renderQueue[num].page, renderQueue[num].renderContext, renderQueue[num].canvas);
+          }
+        });
+      }
+
+      /**
+       * Asynchronously downloads PDF.
+       */
+      pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfDoc = pdfDoc_;
+
+
+        for (let i = 0; i < pdfDoc.numPages; i++) {
+           preparePage(i+1);
+        }
+
+      });
+      });
+
+      </script>
+  </body>
+</html>
